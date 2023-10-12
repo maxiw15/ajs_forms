@@ -1,11 +1,13 @@
-// TODO: write code here
+import { Tooltip } from "./tooltip";
 
-// comment this to pass build
-const unusedVariable = "variable";
+const button = document.querySelector(".btn");
 
-// for demonstration purpose only
-export default function demo(value) {
-  return `Demo: ${value}`;
-}
+const tooltip = new Tooltip();
 
-console.log("app.js included");
+button.addEventListener("click", () => {
+  if (document.querySelector(".tooltip-wrapper") === null) {
+    tooltip.addTooltip(button);
+  } else {
+    tooltip.removeTooltip();
+  }
+});
